@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Section from './Feedback/Section/Section';
+import FeedbackOptions from './Feedback/FeedbackOptions/FeedbackOptions';
 export const App = () => {
   return (
     <div
@@ -19,14 +20,16 @@ export const App = () => {
 
 class Feedback extends Component {
   state = {
-    good: 0,
-    neutral: 0,
-    bad: 0,
+    Good: 0,
+    Neutral: 0,
+    Bad: 0,
   };
   render() {
+    const options = Object.keys(this.state);
     return (
       <div>
         <Section title="Please, leave feedback"></Section>
+        <FeedbackOptions options={options} />
       </div>
     );
   }
